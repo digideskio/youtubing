@@ -36,12 +36,7 @@ $(document).ready(function(){
            html += '<p>Duration: ' + toHHMMSS(duration) + '</p>';
            html += '<p>Published: ' + published_date + '</p>';
            html += '<p>Views: ' + commafy(views) + '</p>';
-           // html += '<div class="slider'+i+'">';
            html += '<img src="' + thumbnail_url + '"/>';
-           // html += '<img src="'+ entries[i]['media$group']['media$thumbnail'][1]['url']+'"/>';
-           // html += '<img src="'+ entries[i]['media$group']['media$thumbnail'][2]['url']+'"/>';
-           // html += '<img src="'+ entries[i]['media$group']['media$thumbnail'][3]['url']+'"/>';
-           // html += '</div>';
            html += '</a>';        
          }
         }else{
@@ -56,6 +51,7 @@ $(document).ready(function(){
     });
   }
 
+  // Add comma to make the number readable
   // http://stackoverflow.com/a/6785438/477958
   function commafy( arg ) {
    arg += '';
@@ -87,9 +83,10 @@ $(document).ready(function(){
     listVideos(query, maxResults);
   });
 
+  // Time formatting
   //http://stackoverflow.com/questions/6312993/javascript-seconds-to-time-with-format-hhmmss
   function toHHMMSS(seconds) {
-    var sec_num = parseInt(seconds, 10); // don't forget the second parm
+    var sec_num = parseInt(seconds, 10); 
     var hours   = Math.floor(sec_num / 3600);
     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
     var seconds = sec_num - (hours * 3600) - (minutes * 60);
