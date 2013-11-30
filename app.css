@@ -3,7 +3,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* ----- General ----- */
 html {
   color: #FFF;
-  min-width: 1024px;
+  min-width: 1067px;
   max-width: 1280px;
 }
 
@@ -30,7 +30,7 @@ h3 {
 }
 
 p {
-
+  color: #FFF;
 }
 
 /* Header */
@@ -89,30 +89,43 @@ section {
   margin-top: 0;
 }
 
-ul, a { 
+a {
   display: inline-block;
-}
-
-img {
-  display: inline-block;
-  width: 200px;
-  height: 150px;
+  width: 210px;
+  height: 230px;
   margin: 10px;
-  border: 1px solid #FFF;
+  background: #AAA;
   border-radius: 25px;
-  z-index: 8;
+  padding: 5px;
+  text-decoration: none;
 }
 
-img.last-active {
-  z-index: 9;
+a p {
+  margin-top: 5px;
+  font-size: 12px;
+  font-family: sans-serif;
 }
 
-img.active {
-  z-index: 10;
+a p.title {
+  font-size: 14px;
+  margin-top: 15px;
 }
 
-.slider {
-  overflow: hidden;
+a img {
+  display: block;
+  width: 190px;
+  height: 140px;
+  margin: auto;
+  margin-top: 5px;
+  border-radius: 25px;
+  box-shadow: 0 0 2px #FFF, 0 0 3px #2dfff8, 0 0 4px #2dfff8;
+}
+
+/*http://stackoverflow.com/questions/15193676/padding-text-with-ellipsis-if-its-too-long*/
+.title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 /* Footer */

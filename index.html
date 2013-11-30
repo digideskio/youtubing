@@ -18,7 +18,7 @@
   </header>
 
   <section>
-        <input id="query" value='cats' type="text"/>
+        <input id="query" value='Sasha Lopez' type="text"/>
         <button id="search-button">Search</button>
   </section>
 
@@ -28,27 +28,5 @@
   <footer>
     Copyright &copy; 2013 Yuichi Hagio.  All rights reserved.
   </footer>
-
-<script type="text/javascript">
-  function slideSwitch() {
-      var $active = $('.slider img.active');
-
-      if ( $active.length == 0 ) $active = $('.slider img:last');
-
-      var $next =  $active.next().length ? $active.next() : $('.slider img:first');
-
-      $active.addClass('last-active');
-          
-      $next.css({opacity: 0.0})
-          .addClass('active')
-          .animate({opacity: 1.0}, 1000, function() {
-              $active.removeClass('active last-active');
-          });
-  }
-  $(function() {
-    setInterval( "slideSwitch()", 1000 );
-  });
-  
-</script>
 </body>
 </html>
