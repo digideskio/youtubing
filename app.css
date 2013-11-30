@@ -2,7 +2,9 @@
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
 /* ----- General ----- */
 html {
-  
+  color: #FFF;
+  min-width: 1067px;
+  max-width: 1280px;
 }
 
 body { 
@@ -27,6 +29,10 @@ h3 {
   letter-spacing: 3px;
 }
 
+p {
+  color: #FFF;
+}
+
 /* Header */
 header {
   width: 100%;
@@ -37,22 +43,89 @@ nav {
   height: 40px;
   width: 100%;
   position: fixed;
-  background: transparent;
+  background: #000;
   text-align: center;
   padding-bottom: 5px;
-  border-bottom: 1px solid #FFF;
 }
 
 
 
 /* Body */
 
-.wrapper {
+section {
   display: block;
-  width: 300px;
-  height:100px;
+  width: 450px;
+  height: 40px;
   margin: auto;
-  margin-top:60px;
+  margin-top:25px;
+  margin-bottom: 0;
+}
+
+#query {
+  width: 300px;
+  height: 20px;
+  border-radius: 15px;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+#search-button {
+  width: 70px;
+  height: 26px;
+  vertical-align: 10%;
+  border-radius: 15px;
+  background: #FFF;
+}
+
+#search-button, #query:focus {
+  outline: 0;
+}
+
+#search-container {
+  width: 95%;
+  margin: auto;
+  padding: 2.5%;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+a {
+  display: inline-block;
+  width: 210px;
+  height: 230px;
+  margin: 10px;
+  background: #AAA;
+  border-radius: 25px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+a p {
+  margin-top: 5px;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+a p.title {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+a img {
+  display: block;
+  width: 190px;
+  height: 140px;
+  margin: auto;
+  margin-top: 5px;
+  border-radius: 25px;
+  box-shadow: 0 0 2px #FFF, 0 0 3px #2dfff8, 0 0 4px #2dfff8;
+}
+
+/*http://stackoverflow.com/questions/15193676/padding-text-with-ellipsis-if-its-too-long*/
+.title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 /* Footer */
@@ -65,7 +138,7 @@ footer {
   width: 100%;
   padding-top: 10px;
   color: #666;
-  background-color: transparent;
+  background-color: #000;
   text-shadow: 0px -1px 0px rgba(0,0,0,.5);
   text-align: center;
 }
