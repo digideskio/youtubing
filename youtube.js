@@ -53,35 +53,16 @@ $(document).ready(function(){
 
   // Add comma to make the number readable
   // http://stackoverflow.com/a/6785438/477958
-  function commafy( arg ) {
-   arg += '';
-   var num = arg.split('.'); 
-   if (typeof num[0] !== 'undefined'){
-      var int = num[0];
-      if (int.length > 3){
-         int     = int.split('').reverse().join('');
-         int     = int.replace(/(\d{3})/g, "$1,");
-         int     = int.split('').reverse().join('')
+  function commafy( num ) {
+      var str = num.toString().split('.');
+      if (str[0].length >= 5) {
+          str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
       }
-   }
-   if (typeof num[1] !== 'undefined'){
-      var dec = num[1];
-      if (dec.length > 4){
-         dec     = dec.replace(/(\d{3})/g, "$1 ");
+      if (str[1] && str[1].length >= 5) {
+          str[1] = str[1].replace(/(\d{3})/g, '$1 ');
       }
-   }
-
-   return (typeof num[0] !== 'undefined'?int:'') 
-        + (typeof num[1] !== 'undefined'?'.'+dec:'');
+      return str.join('.');
   }
-
-  // Search videos
-  $('#search-button').on('click', function(){
-    var query = document.getElementById("query").value;
-    var maxResults = 40;
-
-    listVideos(query, maxResults);
-  });
 
   // Time formatting
   //http://stackoverflow.com/questions/6312993/javascript-seconds-to-time-with-format-hhmmss
@@ -97,6 +78,14 @@ $(document).ready(function(){
     var time    = hours+':'+minutes+':'+seconds;
     return time;
   }
+
+  // Search videos
+  $('#search-button').on('click', function(){
+    var query = document.getElementById("query").value;
+    var maxResults = 40;
+
+    listVideos(query, maxResults);
+  });
 
 });
 
