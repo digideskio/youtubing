@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  function listVideos(query, maxResults) {
+  function listVideos(query, maxResults, searchOption) {
     $.ajax({
       type:"GET",
       url:'http://gdata.youtube.com/feeds/videos/',
@@ -10,7 +10,7 @@ $(document).ready(function(){
         'max-results':maxResults,
         'alt':'json-in-script',
         'format':'1',
-        'orderby': 'published'
+        'orderby': searchOption
       },
       dataType:'jsonp',
 
@@ -80,11 +80,35 @@ $(document).ready(function(){
   }
 
   // Search videos
-  $('#search-button').on('click', function(){
+  $('#search-by-relevance').on('click', function(){
     var query = document.getElementById("query").value;
     var maxResults = 40;
 
     listVideos(query, maxResults);
+  });
+
+  $('#search-by-date').on('click', function(){
+    var query = document.getElementById("query").value;
+    var searchOption = 'published';
+    var maxResults = 40;
+
+    listVideos(query, maxResults, searchOption);
+  });
+
+  $('#search-by-views').on('click', function(){
+    var query = document.getElementById("query").value;
+    var searchOption = 'viewCount';
+    var maxResults = 40;
+
+    listVideos(query, maxResults, searchOption);
+  });
+
+  // User can hit ENTER instead of clicking the relevance button
+  $(document).keyup(function(event){
+    if(event.keyCode == 13){
+      event.preventDefault();
+      $("#search-by-relevance").click();
+    }
   });
 
 });
