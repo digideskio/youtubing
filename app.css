@@ -4,7 +4,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 html {
   color: #FFF;
   min-width: 1067px;
-  max-width: 1280px;
+  /*max-width: 1280px;*/
 }
 
 body { 
@@ -72,6 +72,7 @@ section {
 }
 
 .button-group {
+  display: block;
   width: 300px;
   margin: auto;
   margin-top: 5px;
